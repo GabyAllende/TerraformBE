@@ -111,3 +111,9 @@ resource "aws_ssm_parameter" "app_id" {
   type  = "StringList"
   value = join(",", [aws_subnet.subnets["sn-app-A"].id,aws_subnet.subnets["sn-app-B"].id,aws_subnet.subnets["sn-app-B"].id])
 }
+
+resource "aws_ssm_parameter" "web_id" {
+  name  = "/subnet/web/id"
+  type  = "StringList"
+  value = join(",", [aws_subnet.subnets["sn-web-A"].id,aws_subnet.subnets["sn-web-B"].id,aws_subnet.subnets["sn-web-B"].id])
+}
